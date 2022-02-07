@@ -41,16 +41,9 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 
 console.log('project wired!')
 
-// create selectors
-
+// create header selectors
 const headerNav = document.querySelectorAll('header nav a');
 const headerNavText = Object.values(siteContent.nav);
-const ctaHeader = document.querySelector('.cta-text h1');
-const ctaButton = document.querySelector('.cta-text button');
-const footerLink = document.querySelector('footer a');
-const logoImg = document.querySelector('.logo');
-const ctaImg = document.querySelector('#cta-img');
-const accentImg = document.querySelector('.middle-img');
 
 // add header content
 headerNav.forEach((nav, idx) => {
@@ -58,13 +51,37 @@ headerNav.forEach((nav, idx) => {
   nav.classList.add('italic');
 });
 
+// create cta selectors
+const ctaHeader = document.querySelector('.cta-text h1');
+const ctaButton = document.querySelector('.cta-text button');
+
 // add cta content
 ctaHeader.textContent = siteContent['cta']['h1'];
 ctaButton.textContent = siteContent['cta']['button'];
 
+// create contact selectors
+const contactHeading = document.querySelector('.contact h4');
+const contactAddress = contactHeading.nextElementSibling;
+const contactPhone = contactAddress.nextElementSibling;
+const contactEmail = contactPhone.nextElementSibling;
+
+// add contact content
+contactHeading.textContent = siteContent['contact']['contact-h4']
+contactAddress.textContent = siteContent['contact']['address']
+contactPhone.textContent = siteContent['contact']['phone']
+contactEmail.textContent = siteContent['contact']['email']
+
+// create footer selector
+const footerLink = document.querySelector('footer a');
+
 // add footer content
 footerLink.textContent = siteContent['footer']['copyright'];
 footerLink.classList.add('bold');
+
+// create image selectors
+const logoImg = document.querySelector('.logo');
+const ctaImg = document.querySelector('#cta-img');
+const accentImg = document.querySelector('.middle-img');
 
 // add image sources
 
