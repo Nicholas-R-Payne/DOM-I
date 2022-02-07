@@ -43,11 +43,11 @@ console.log('project wired!')
 
 // create header selectors
 const headerNav = document.querySelectorAll('header nav a');
-const headerNavText = Object.values(siteContent.nav);
+const headerNavTexts = Object.values(siteContent.nav);
 
 // add header content
 headerNav.forEach((nav, idx) => {
-  nav.textContent = headerNavText[idx];
+  nav.textContent = headerNavTexts[idx];
   nav.classList.add('italic');
 });
 
@@ -59,6 +59,21 @@ const ctaButton = document.querySelector('.cta-text button');
 ctaHeader.textContent = siteContent['cta']['h1'];
 ctaButton.textContent = siteContent['cta']['button'];
 
+// add main selectors
+const mainTop = document.querySelector('.top-content');
+const mainBottom = document.querySelector('.bottom-content');
+
+// add main content
+mainTop.children[0].children[0].textContent = siteContent['main-content']['features-h4'];
+mainTop.children[0].children[1].textContent = siteContent['main-content']['features-content'];
+mainTop.children[1].children[0].textContent = siteContent['main-content']['about-h4'];
+mainTop.children[1].children[1].textContent = siteContent['main-content']['about-content'];
+mainBottom.children[0].children[0].textContent = siteContent['main-content']['services-h4'];
+mainBottom.children[0].children[1].textContent = siteContent['main-content']['services-content'];
+mainBottom.children[1].children[0].textContent = siteContent['main-content']['vision-h4'];
+mainBottom.children[1].children[1].textContent = siteContent['main-content']['vision-content'];
+
+
 // create contact selectors
 const contactHeading = document.querySelector('.contact h4');
 const contactAddress = contactHeading.nextElementSibling;
@@ -66,10 +81,10 @@ const contactPhone = contactAddress.nextElementSibling;
 const contactEmail = contactPhone.nextElementSibling;
 
 // add contact content
-contactHeading.textContent = siteContent['contact']['contact-h4']
-contactAddress.textContent = siteContent['contact']['address']
-contactPhone.textContent = siteContent['contact']['phone']
-contactEmail.textContent = siteContent['contact']['email']
+contactHeading.textContent = siteContent['contact']['contact-h4'];
+contactAddress.textContent = siteContent['contact']['address'];
+contactPhone.textContent = siteContent['contact']['phone'];
+contactEmail.textContent = siteContent['contact']['email'];
 
 // create footer selector
 const footerLink = document.querySelector('footer a');
