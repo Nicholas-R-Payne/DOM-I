@@ -40,3 +40,68 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+// create header selectors
+const headerNav = document.querySelectorAll('header nav a');
+const headerNavTexts = Object.values(siteContent.nav);
+
+// add header content
+headerNav.forEach((nav, idx) => {
+  nav.textContent = headerNavTexts[idx];
+  nav.classList.add('italic');
+});
+
+// create cta selectors
+const ctaHeader = document.querySelector('.cta-text h1');
+const ctaButton = document.querySelector('.cta-text button');
+
+// add cta content
+ctaHeader.textContent = siteContent['cta']['h1'];
+ctaButton.textContent = siteContent['cta']['button'];
+
+// add main selectors
+const mainTop = document.querySelector('.top-content');
+const mainBottom = document.querySelector('.bottom-content');
+
+// add main content
+mainTop.children[0].children[0].textContent = siteContent['main-content']['features-h4'];
+mainTop.children[0].children[1].textContent = siteContent['main-content']['features-content'];
+mainTop.children[1].children[0].textContent = siteContent['main-content']['about-h4'];
+mainTop.children[1].children[1].textContent = siteContent['main-content']['about-content'];
+mainBottom.children[0].children[0].textContent = siteContent['main-content']['services-h4'];
+mainBottom.children[0].children[1].textContent = siteContent['main-content']['services-content'];
+mainBottom.children[1].children[0].textContent = siteContent['main-content']['product-h4'];
+mainBottom.children[1].children[1].textContent = siteContent['main-content']['product-content'];
+mainBottom.children[2].children[0].textContent = siteContent['main-content']['vision-h4'];
+mainBottom.children[2].children[1].textContent = siteContent['main-content']['vision-content'];
+
+
+// create contact selectors
+const contactHeading = document.querySelector('.contact h4');
+const contactAddress = contactHeading.nextElementSibling;
+const contactPhone = contactAddress.nextElementSibling;
+const contactEmail = contactPhone.nextElementSibling;
+
+// add contact content
+contactHeading.textContent = siteContent['contact']['contact-h4'];
+contactAddress.textContent = siteContent['contact']['address'];
+contactPhone.textContent = siteContent['contact']['phone'];
+contactEmail.textContent = siteContent['contact']['email'];
+
+// create footer selector
+const footerLink = document.querySelector('footer a');
+
+// add footer content
+footerLink.textContent = siteContent['footer']['copyright'];
+footerLink.classList.add('bold');
+
+// create image selectors
+const logoImg = document.querySelector('.logo');
+const ctaImg = document.querySelector('#cta-img');
+const accentImg = document.querySelector('.middle-img');
+
+// add image sources
+
+logoImg.src = siteContent['images']['logo-img'];
+ctaImg.src = siteContent['images']['cta-img'];
+accentImg.src = siteContent['images']['accent-img'];
