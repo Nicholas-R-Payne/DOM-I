@@ -44,7 +44,9 @@ console.log('project wired!')
 // create selectors
 
 const headerNav = document.querySelectorAll('header nav a');
-const headerNavText = Object.values(siteContent.nav)
+const headerNavText = Object.values(siteContent.nav);
+const ctaHeader = document.querySelector('.cta-text h1');
+const ctaButton = document.querySelector('.cta-text button');
 const footerLink = document.querySelector('footer a');
 const logoImg = document.querySelector('.logo');
 const ctaImg = document.querySelector('#cta-img');
@@ -56,8 +58,13 @@ headerNav.forEach((nav, idx) => {
   nav.classList.add('italic');
 });
 
+// add cta content
+ctaHeader.textContent = siteContent['cta']['h1'];
+ctaButton.textContent = siteContent['cta']['button'];
+
 // add footer content
 footerLink.textContent = siteContent['footer']['copyright'];
+footerLink.classList.add('bold');
 
 // add image sources
 
